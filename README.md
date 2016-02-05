@@ -7,9 +7,10 @@ Voters Subsystem
 
 Authors
 =======
-Adrian
-Daniel
-Eduardo
+
+* Adrian
+* Daniel
+* Eduardo
 
 
 
