@@ -7,9 +7,9 @@ Voters Subsystem
 
 Authors
 =======
-* Alejandro Cabrales
-* Alejandro Rodríguez
-* Carlos Lubián
+*Adrian
+*Daniel
+*Eduardo
 
 
 
