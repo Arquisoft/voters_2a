@@ -9,7 +9,7 @@ Authors
 =======
 
 * Adrian
-* Daniel
+* Daniel Arango
 * Eduardo
 
 
