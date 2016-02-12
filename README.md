@@ -8,7 +8,7 @@ Voters Subsystem
 Authors
 =======
 
-* Adrian
+* Adrián Iglesias García
 * Daniel Arango
 * Eduardo
 
