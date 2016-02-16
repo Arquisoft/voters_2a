@@ -4,23 +4,36 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class UserInfo {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(UserInfo.class);
 
-    private final String name;
-    private final Integer age;
+	private String email;
+	private String password;
 
-    public UserInfo(String name, Integer age) {
-    	log.info("Creating user " + name + ". age: " + age);
-        this.name = name;
-        this.age = age;
-    }
+	public UserInfo() {
 
-    public String getName() {
-        return name;
-    }
+	}
 
-    public Integer getAge() {
-        return age;
-    }
+	public UserInfo(String email, String password) {
+		log.info("Creating user " + email + ". password: " + password);
+		this.email = email;
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }
