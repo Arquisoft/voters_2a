@@ -10,7 +10,7 @@ Authors
 
 * Adrián Iglesias García
 * Daniel Arango
-* Eduardo
+* Eduardo García
 
 
 
