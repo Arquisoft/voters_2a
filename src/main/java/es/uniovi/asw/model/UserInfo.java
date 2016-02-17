@@ -44,4 +44,11 @@ public class UserInfo extends AbstractPersistable<Long> {
 		this.password = password;
 	}
 
+	public boolean emailCorrecto() {
+		if (email != null)
+			if (email.contains("@") && !email.startsWith("@") && !email.endsWith("@"))
+				return true;
+		return false;
+	}
+
 }
