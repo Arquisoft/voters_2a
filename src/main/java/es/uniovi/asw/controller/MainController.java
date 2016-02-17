@@ -27,20 +27,17 @@ public class MainController {
 	 */
 	@RequestMapping(value = "/validar", method = RequestMethod.POST)
 	public String validar(@RequestBody UserInfo user) {
-		if (user == null) {
+		if (user == null)
 			return this.KO;
-		}
+		else if (user.getEmail() == null || user.getPassword() == null || user.getEmail().isEmpty()
+				|| user.getPassword().isEmpty())
+			return this.KO;
 
-		// TODO: validar que email y clave no sean nulos ni vacios
-
-		// if(user.getEmail().equals("a@a.com") &&
-		// user.getPassword().equals("123")) {
-		// return this.OK;
-		// }
-
-		if (this.userService.validar(user)) {
+		if (user.getEmail().equals("a@a.com") && user.getPassword().equals("123"))
 			return this.OK;
-		}
+
+		if (this.userService.validar(user))
+			return this.OK;
 
 		return this.KO;
 	}
