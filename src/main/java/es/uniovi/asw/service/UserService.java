@@ -24,6 +24,10 @@ public class UserService {
 	      return false;
            }
            
+          if (u.getPassword().equals(user.getPassword())) {
+              return true;
+	}
+           
         return false;
      }
 
