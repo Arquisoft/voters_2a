@@ -33,10 +33,10 @@ public class MainController {
 				|| user.getPassword().isEmpty())
 			return this.KO;
 
-		if (user.getEmail().equals("a@a.com") && user.getPassword().equals("123"))
+		else if (user.getEmail().equals("a@a.com") && user.getPassword().equals("123"))
 			return this.OK;
 
-		if (this.userService.validar(user))
+		else if (this.userService.validar(user))
 			return this.OK;
 
 		return this.KO;

@@ -10,13 +10,12 @@ import es.uniovi.asw.model.UserInfo;
 @Transactional
 public class UserService {
 
-
 	public UserService() {
 
 	}
 
 	public boolean validar(UserInfo user) {
-	
+
 		return false;
 	}
 
