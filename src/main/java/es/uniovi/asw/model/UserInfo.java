@@ -16,9 +16,18 @@ public class UserInfo extends AbstractPersistable<Long> {
 
 	private static final Logger log = LoggerFactory.getLogger(UserInfo.class);
 
+       	@Column(nullable = false)
+	private String nombre;
+	
 	@Column(nullable = false, unique = true)
 	private String email;
+	
+	@Column(nullable = false)
+	private String nif;
 
+        @Column(nullable = false)
+	private int codigo_mesa;
+	
 	@Column(nullable = false)
 	private String password;
 
@@ -31,6 +40,18 @@ public class UserInfo extends AbstractPersistable<Long> {
 	public String getEmail() {
 		return email;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public String getNif() {
+		return nif;
+	}
+	
+	public String getCodigoMesa() {
+		return codigo_mesa;
+	}
 
 	public String getPassword() {
 		return password;
@@ -38,6 +59,18 @@ public class UserInfo extends AbstractPersistable<Long> {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public void setNif(String nif) {
+		this.nif = nif;
+	}
+	
+	public void setCodigoMesa(int codigo) {
+		this.codigo_mesa = codigo;
 	}
 
 	public void setPassword(String password) {
