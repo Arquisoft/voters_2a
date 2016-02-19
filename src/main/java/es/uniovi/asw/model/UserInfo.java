@@ -49,7 +49,7 @@ public class UserInfo extends AbstractPersistable<Long> {
 		return nif;
 	}
 	
-	public String getCodigoMesa() {
+	public int getCodigoMesa() {
 		return codigo_mesa;
 	}
 
