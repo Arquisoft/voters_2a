@@ -36,6 +36,27 @@ public class UserInfoTest {
 		user.setNif("");
 		assertFalse(user.nifCorrecto(user.getNif()));
 		
+		UserInfo user1 = new UserInfo("adrian@gmail.com", null);
+		assertFalse(user1.passwordCorrecta(user1.getPassword()));
+		assertTrue(user1.getEmail().equals("adrian@gmail.com"));
+		user1.setNif(null);
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("1234567");
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("123456789");
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("77777777A");
+		assertTrue(user1.nifCorrecto(user1.getNif()));
+		assertFalse(user1.getCodigoMesa() == -1);
+		user1.setCodigoMesa(2);
+		assertTrue(user1.getCodigoMesa() == 2);
+		user1.setCodigoMesa(0);
+		assertFalse(user1.getCodigoMesa() == 0);
+		user1.setNombre("Daniel");
+		assertTrue(user1.getNombre().equals("Daniel"));
+		user1.setNombre(null);
+		assertFalse(user1.getNombre().equals(null));
+		
 	}
 
 }
