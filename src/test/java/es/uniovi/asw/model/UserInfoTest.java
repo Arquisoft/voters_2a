@@ -28,6 +28,13 @@ public class UserInfoTest {
 		assertFalse(user.emailCorrecto(user.getEmail()));
 		user.setEmail("a@a.com");
 		assertTrue(user.emailCorrecto(user.getEmail()));
+		assertFalse(user.getPassword().equals(null));
+		user.setPassword("123456");
+		assertTrue(user.passwordCorrecta(user.getPassword()));
+		user.setEmail("");
+		assertFalse(user.getEmail().equals(""));
+		user.setNif("");
+		assertFalse(user.nifCorrecto(user.getNif()));
 		
 	}
 
