@@ -20,7 +20,7 @@ public class UserInfoTest {
 	@Test
 	public void createUser() throws Exception {
 		UserInfo user = new UserInfo(null, "1");
-		assertFalse(user.emailCorrecto());
+		assertFalse(user.emailCorrecto(user.getEmail()));
 		assertTrue(user.getPassword().equals("1"));
 		user.setEmail("@.com");
 		assertFalse(user.emailCorrecto(user.getEmail()));
