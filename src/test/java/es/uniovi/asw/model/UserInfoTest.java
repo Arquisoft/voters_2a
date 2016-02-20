@@ -23,11 +23,11 @@ public class UserInfoTest {
 		assertFalse(user.emailCorrecto());
 		assertTrue(user.getPassword().equals("1"));
 		user.setEmail("@.com");
-		assertFalse(user.emailCorrecto());
+		assertFalse(user.emailCorrecto(user.getEmail()));
 		user.setEmail("a@");
-		assertFalse(user.emailCorrecto());
+		assertFalse(user.emailCorrecto(user.getEmail()));
 		user.setEmail("a@a.com");
-		assertTrue(user.emailCorrecto());
+		assertTrue(user.emailCorrecto(user.getEmail()));
 		
 	}
 
