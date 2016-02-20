@@ -43,6 +43,10 @@ public class UserInfo extends AbstractPersistable<Long> {
 			log.error("La constraseña debe tener un valor correcto");
 	}
 
+	public UserInfo() {
+
+	}
+
 	public String getEmail() {
 		return email;
 	}
