@@ -29,9 +29,6 @@ public class MainController {
 	public String validar(@RequestBody UserInfo user) {
 		if (user == null)
 			return this.KO;
-		else if (user.getEmail() == null || user.getPassword() == null || user.getEmail().isEmpty()
-				|| user.getPassword().isEmpty())
-			return this.KO;
 
 		else if (this.userService.validar(user))
 			return this.OK;
