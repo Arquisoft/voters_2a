@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.uniovi.asw.model.UserInfo;
-import es.uniovi.asw.service.UserService;
+import es.uniovi.asw.service.UserServiceImpl;
 
 @RestController
 public class MainController {
@@ -15,7 +15,7 @@ public class MainController {
 	private final String KO = "FALLO";
 
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 
 	@RequestMapping("/")
 	public String landing() {

@@ -1,34 +1,8 @@
 package es.uniovi.asw.service;
 
-import javax.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import es.uniovi.asw.repository.UserRepository;
 import es.uniovi.asw.model.UserInfo;
 
-@Service
-@Transactional
-public class UserService {
-	
-	@Autowired
-	private UserRepository userRepository;
-
-	public UserService() {
-
-	}
-
-	public boolean validar(UserInfo user) {
-          UserInfo u = this.userRepository.findByEmail(user.getEmail());
-          
-          if (u == null) {
-	      return false;
-           }
-           
-          if (u.getPassword().equals(user.getPassword())) {
-              return true;
-	}
-           
-        return false;
-     }
+public interface UserService {
+	boolean validar(UserInfo user);
 
 }
