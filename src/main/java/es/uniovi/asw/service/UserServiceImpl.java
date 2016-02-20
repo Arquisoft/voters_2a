@@ -16,16 +16,21 @@ public class UserServiceImpl implements UserService {
 	public UserServiceImpl() {
 	}
 
-	public boolean validar(UserInfo user) {
+	public UserInfo validar(UserInfo user) {
 		UserInfo u = this.userRepository.findByEmail(user.getEmail());
 
 		if (u == null)
-			return false;
+			return null;
 
 		if (u.getPassword().equals(user.getPassword()))
-			return true;
+			return u;
 
-		return false;
+		return null;
+	}
+
+	@Override
+	public UserInfo update(UserInfo user) {
+		return this.userRepository.save(user);
 	}
 
 }
