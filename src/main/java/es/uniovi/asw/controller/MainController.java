@@ -70,7 +70,7 @@ public class MainController {
 				String pass = StringUtil.getCadenaAlfanumAleatoria(8);
 				valido.setPassword(pass);
 				valido = this.userService.update(valido);
-				return pass;
+				return "{\"password\": \" " + pass + " \"}";
 			}
 
 		} catch (Exception e) {
