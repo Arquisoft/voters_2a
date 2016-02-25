@@ -17,7 +17,8 @@ import es.uniovi.asw.Application;
 @IntegrationTest({ "server.port=0" })
 public class UserInfoTest {
 
-	UserInfo user, user1;
+	UserInfo user = new UserInfo();
+	UserInfo user1 = new UserInfo();
 
 	@Test
 	public void createUser() throws Exception {
@@ -45,7 +46,7 @@ public class UserInfoTest {
 		assertFalse(user.emailCorrecto(user.getEmail()));
 		user.setEmail("a@a.com");
 		assertTrue(user.emailCorrecto(user.getEmail()));
-		assertFalse(user.getPassword().equals(null));
+		assertTrue(user.getPassword()==null);
 		user.setPassword("123456");
 		assertTrue(user.passwordCorrecta(user.getPassword()));
 		user.setEmail("");

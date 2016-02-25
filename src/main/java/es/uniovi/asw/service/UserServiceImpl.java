@@ -33,7 +33,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserInfo update(UserInfo user) {
 
-		return this.userRepository.save(user);
+		if (user != null)
+			return this.userRepository.save(user);
+		return null;
 
 	}
 
