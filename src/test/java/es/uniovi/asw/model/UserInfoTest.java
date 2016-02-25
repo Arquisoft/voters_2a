@@ -17,11 +17,27 @@ import es.uniovi.asw.Application;
 @IntegrationTest({ "server.port=0" })
 public class UserInfoTest {
 
+	UserInfo user, user1;
+
 	@Test
 	public void createUser() throws Exception {
-		UserInfo user = new UserInfo(null, "1");
+		user = new UserInfo(null, "1");
 		assertFalse(user.emailCorrecto(user.getEmail()));
 		assertTrue(user.getPassword().equals("1"));
+		assertTrue(user.getCodigoMesa() == 0);
+		assertTrue(user.getNif() == null);
+		assertTrue(user.getNombre() == null);
+
+		user1 = new UserInfo("adrian@gmail.com", null);
+		assertFalse(user1.passwordCorrecta(user1.getPassword()));
+		assertTrue(user1.getEmail().equals("adrian@gmail.com"));
+		assertFalse(user1.getCodigoMesa() == -1);
+		assertTrue(user.getNif() == null);
+		assertTrue(user.getNombre() == null);
+
+	}
+
+	public void updateUser() throws Exception {
 		user.setEmail("@.com");
 		assertFalse(user.emailCorrecto(user.getEmail()));
 		user.setEmail("a@");
@@ -35,19 +51,7 @@ public class UserInfoTest {
 		assertFalse(user.getEmail().equals(""));
 		user.setNif("");
 		assertFalse(user.nifCorrecto(user.getNif()));
-		
-		UserInfo user1 = new UserInfo("adrian@gmail.com", null);
-		assertFalse(user1.passwordCorrecta(user1.getPassword()));
-		assertTrue(user1.getEmail().equals("adrian@gmail.com"));
-		user1.setNif(null);
-		assertFalse(user1.nifCorrecto(user1.getNif()));
-		user1.setNif("1234567");
-		assertFalse(user1.nifCorrecto(user1.getNif()));
-		user1.setNif("123456789");
-		assertFalse(user1.nifCorrecto(user1.getNif()));
-		user1.setNif("77777777A");
-		assertTrue(user1.nifCorrecto(user1.getNif()));
-		assertFalse(user1.getCodigoMesa() == -1);
+
 		user1.setCodigoMesa(2);
 		assertTrue(user1.getCodigoMesa() == 2);
 		user1.setCodigoMesa(0);
@@ -56,7 +60,25 @@ public class UserInfoTest {
 		assertTrue(user1.getNombre().equals("Daniel"));
 		user1.setNombre(null);
 		assertFalse(user1.getNombre().equals(null));
-		
+
+		user1.setNif(null);
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("1234567");
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("123456789");
+		assertFalse(user1.nifCorrecto(user1.getNif()));
+		user1.setNif("77777777A");
+		assertTrue(user1.nifCorrecto(user1.getNif()));
+		assertFalse(!user1.nifCorrecto(user1.getNif()));
+	}
+
+	public void deleteUser() throws Exception {
+		assertTrue(user != null);
+		assertTrue(user1 != null);
+		user = null;
+		user1 = null;
+		assertTrue(user == null);
+		assertTrue(user1 == null);
 	}
 
 }
