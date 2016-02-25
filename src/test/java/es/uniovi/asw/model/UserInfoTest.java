@@ -37,6 +37,7 @@ public class UserInfoTest {
 
 	}
 
+	@Test
 	public void updateUser() throws Exception {
 		user.setEmail("@.com");
 		assertFalse(user.emailCorrecto(user.getEmail()));
@@ -72,6 +73,7 @@ public class UserInfoTest {
 		assertFalse(!user1.nifCorrecto(user1.getNif()));
 	}
 
+	@Test
 	public void deleteUser() throws Exception {
 		assertTrue(user != null);
 		assertTrue(user1 != null);

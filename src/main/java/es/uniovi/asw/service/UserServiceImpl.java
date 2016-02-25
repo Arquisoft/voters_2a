@@ -17,6 +17,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public UserInfo validar(UserInfo user) {
+		if (user == null)
+			return null;
 		UserInfo u = this.userRepository.findByEmail(user.getEmail());
 
 		if (u == null)
@@ -30,7 +32,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserInfo update(UserInfo user) {
+
 		return this.userRepository.save(user);
+
 	}
 
 }
