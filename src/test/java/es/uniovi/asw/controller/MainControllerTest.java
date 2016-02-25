@@ -1,7 +1,5 @@
 package es.uniovi.asw.controller;
 
-import static org.junit.Assert.*;
-
 import java.net.URL;
 
 import org.junit.Before;
@@ -16,8 +14,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.model.UserInfo;
-import es.uniovi.asw.rest.UserInfoRest;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
