@@ -12,6 +12,15 @@ Authors
 * Daniel Arango
 * Eduardo García
 
+USO
+=======
+* Arranca MySQL
+* Arranca el microservicio
+* Arranca apache httpd
+* Accede a http://localhost:80/voters
+
+
+
 
 
 
